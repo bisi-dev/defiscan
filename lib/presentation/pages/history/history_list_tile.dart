@@ -1,5 +1,6 @@
-import '../../core/app_core.dart';
-import '../../data/app_data.dart';
+import '../../../core/app_core.dart';
+import '../../../data/app_data.dart';
+
 import 'package:timeago/timeago.dart' as timeago;
 
 class HistoryListTile extends StatelessWidget {

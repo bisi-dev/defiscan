@@ -2,17 +2,18 @@
 This is the official repository for DeFi Scan - a mobile blockchain explorer built with Dart/Flutter for searching, curating and storing details of cryptocurrency accounts.
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green)](https://opensource.org/licenses/Apache-2.0)
-<!-- [![Codemagic build status](https://api.codemagic.io/apps/5fe2a9a115bfd177d368e1b3/5fe2a9a115bfd177d368e1b2/status_badge.svg)](https://codemagic.io/apps/5fe2a9a115bfd177d368e1b3/5fe2a9a115bfd177d368e1b2/latest_build) -->
+[![Codemagic build status](https://api.codemagic.io/apps/634695f7e6fd8707a9c2015c/634695f7e6fd8707a9c2015b/status_badge.svg)](https://codemagic.io/apps/634695f7e6fd8707a9c2015c/634695f7e6fd8707a9c2015b/latest_build)
 
 ## Get it on
 <!-- [<img src="assets/screenshots/playstore_badge.png" width="250">](https://play.google.com/store/apps/details?id=dev.bisi.defiscan)   -->
 [<img src="assets/screenshots/appstore_badge.png" width="250">](https://apps.apple.com/us/app/)
 
+You can also try out a web demo on my flutter portfolio page [DeFi Scan](https://flutter.bisi.dev).
+
 <!-- ## In App Preview -->
 
 ## In App Screenshots
-<img src="assets/screenshots/home.png" width="200"> <img src="assets/screenshots/details.png" width="200"> <img src="assets/screenshots/history.png" width="200"> 
-<img src="assets/screenshots/settings.png" width="200">
+<img src="assets/screenshots/home.png" width="200"> <img src="assets/screenshots/details.png" width="200"> <img src="assets/screenshots/history.png" width="200"> <img src="assets/screenshots/settings.png" width="200">
 
 ---
 
@@ -40,9 +41,10 @@ This project currently implements a Dev Layer-First File Structure. Current High
   ‣ domain
     ‣ providers
     ‣ repositories
+    ‣ state
   ‣ presentation
     ‣ pages
-    ‣ widgets
+    ‣ components
   main.dart
 ```
 System Design for Seperation of Concerns:
@@ -52,11 +54,12 @@ System Design for Seperation of Concerns:
 ## CI/CD
 This repository utilizes Continuous Integration against all pushes made to the main branch. 
 <br>
-All APKs can be found as artifacts in the Actions TAB
+All APKs can be found as artifacts in the GitHub Actions TAB. In addition, you can download more artifacts by visiting the latest build on the codemagic webpage. 
 <br>
-CI / CD tool: Github Actions
+CI / CD tool: Github Actions / codemagic
 <br>
-Builds/Releases: [Artifacts](https://github.com/bisi-dev/defiscan/actions/workflows/flutter-ci.yml)
+Builds/Releases: [APK artifacts](https://github.com/bisi-dev/defiscan/actions/workflows/flutter-ci.yml) , 
+[APK + AAR + Runner(ios) artifacts](https://codemagic.io/apps/634695f7e6fd8707a9c2015c/634695f7e6fd8707a9c2015b/latest_build)
 
 ---
 

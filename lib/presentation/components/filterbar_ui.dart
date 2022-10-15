@@ -1,4 +1,4 @@
-import 'package:defiscan/core/app_core.dart';
+import '../../core/app_core.dart';
 
 class FilterBarUI extends StatelessWidget {
   const FilterBarUI({Key? key, required this.info}) : super(key: key);

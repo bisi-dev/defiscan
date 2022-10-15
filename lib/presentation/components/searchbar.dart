@@ -1,7 +1,7 @@
-import 'package:defiscan/core/app_core.dart';
-import 'package:defiscan/data/app_data.dart';
+import '../../core/app_core.dart';
+import '../../domain/app_domain.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 
 class DeFiSearchBar extends StatelessWidget {
   const DeFiSearchBar({Key? key}) : super(key: key);

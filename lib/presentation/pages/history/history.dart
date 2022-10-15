@@ -1,8 +1,10 @@
-import '../../core/app_core.dart';
-import '../../data/app_data.dart';
-import '../components/app_components.dart';
+import '../../../core/app_core.dart';
+import '../../../data/app_data.dart';
+import '../../../domain/app_domain.dart';
+
+import '../../components/app_components.dart';
 import 'package:flutter_swipe_action_cell/flutter_swipe_action_cell.dart';
-import 'package:defiscan/presentation/explorer/details.dart';
+import 'package:defiscan/presentation/pages/explorer/details.dart';
 import 'history_list_tile.dart';
 
 class HistoryPage extends StatefulWidget {

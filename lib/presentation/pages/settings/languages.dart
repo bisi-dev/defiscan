@@ -1,5 +1,7 @@
-import '../../core/app_core.dart';
-import '../components/app_components.dart';
+import '../../../core/app_core.dart';
+import '../../../data/app_data.dart';
+
+import '../../components/app_components.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 
 class LanguagesScreen extends StatefulWidget {

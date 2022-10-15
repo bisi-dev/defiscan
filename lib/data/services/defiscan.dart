@@ -1,5 +1,6 @@
 import 'package:ethers/ethers.dart';
 import 'package:defiscan/core/app_core.dart';
+import '../prefs/app_pref.dart';
 
 class DeFiScan {
   Future<String> getCoinBalance(String balance, String crypto) async {
@@ -27,7 +28,7 @@ class DeFiScan {
       double goodBalance = double.parse(ethers.utils.formatEther(balance));
       return goodBalance.toStringAsFixed(4);
     } catch (e) {
-      return 'Cannot access $rpc node';
+      return '0.00';
     }
   }
 

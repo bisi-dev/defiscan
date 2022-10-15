@@ -1,4 +1,5 @@
-import '../app_core.dart';
+import '../../core/app_core.dart';
+import '../../data/app_data.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   bool _darkTheme = false;

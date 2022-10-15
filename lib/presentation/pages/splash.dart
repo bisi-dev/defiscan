@@ -1,4 +1,5 @@
-import '../core/app_core.dart';
+import '../../core/app_core.dart';
+
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'screen_decider.dart';
 

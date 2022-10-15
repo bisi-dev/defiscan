@@ -1,5 +1,5 @@
-import 'package:defiscan/core/app_core.dart';
-import 'package:defiscan/data/app_data.dart';
+import '../../core/app_core.dart';
+import '../../domain/app_domain.dart';
 
 class InfoBarUI extends StatelessWidget {
   const InfoBarUI(

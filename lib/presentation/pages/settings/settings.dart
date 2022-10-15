@@ -1,7 +1,9 @@
-import '../../core/app_core.dart';
+import '../../../core/app_core.dart';
+import '../../../data/app_data.dart';
+import '../../../domain/app_domain.dart';
+
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:launch_review/launch_review.dart';
-import 'package:provider/provider.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
