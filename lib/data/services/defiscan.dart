@@ -28,7 +28,7 @@ class DeFiScan {
       double goodBalance = double.parse(ethers.utils.formatEther(balance));
       return goodBalance.toStringAsFixed(4);
     } catch (e) {
-      return 'Cannot access $rpc node';
+      return '0.00';
     }
   }
 
