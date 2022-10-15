@@ -1,4 +1,5 @@
-import '../core/app_core.dart';
+import '../../core/app_core.dart';
+import '../../data/app_data.dart';
 
 class ScreenDecider extends StatefulWidget {
   const ScreenDecider({Key? key}) : super(key: key);

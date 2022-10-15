@@ -1,6 +1,7 @@
-import 'package:defiscan/core/app_core.dart';
-import 'package:defiscan/data/app_data.dart';
-import 'package:provider/provider.dart';
+import '../../../core/app_core.dart';
+import '../../../data/app_data.dart';
+import '../../../domain/app_domain.dart';
+
 import 'package:defiscan/presentation/components/app_components.dart';
 
 import 'details.dart';

@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as path;
 
-import '../models/history.dart';
+import '../../data/app_data.dart';
 
 class LocalRepository {
   static void initLocalDatabase() async {

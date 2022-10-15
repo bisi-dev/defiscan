@@ -1,4 +1,4 @@
-import '../core/app_core.dart';
+import '../../core/app_core.dart';
 
 class Intro extends StatefulWidget {
   const Intro({Key? key}) : super(key: key);

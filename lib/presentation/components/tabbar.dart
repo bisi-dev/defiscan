@@ -1,4 +1,4 @@
-import 'package:defiscan/core/app_core.dart';
+import '../../core/app_core.dart';
 
 class DeFiTabBar extends StatelessWidget {
   const DeFiTabBar({Key? key}) : super(key: key);

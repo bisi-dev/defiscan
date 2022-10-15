@@ -1,5 +1,6 @@
 import 'package:defiscan/core/app_core.dart';
 import 'package:defiscan/data/app_data.dart';
+import 'package:defiscan/domain/app_domain.dart';
 
 import 'package:ens_dart/ens_dart.dart';
 import 'package:http/http.dart';

@@ -1,6 +1,5 @@
 import 'core/app_core.dart';
-import 'data/app_data.dart';
-import 'package:provider/provider.dart';
+import 'domain/app_domain.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

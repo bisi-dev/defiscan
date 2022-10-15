@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:defiscan/data/models/account.dart';
 
-import '../../core/constants/color_constant.dart';
+import '../../../core/constants/color_constant.dart';
 
 class AccountListView extends StatelessWidget {
   const AccountListView(

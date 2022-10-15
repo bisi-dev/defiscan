@@ -1,5 +1,6 @@
 import 'package:ethers/ethers.dart';
 import 'package:defiscan/core/app_core.dart';
+import '../prefs/app_pref.dart';
 
 class DeFiScan {
   Future<String> getCoinBalance(String balance, String crypto) async {
