@@ -6,7 +6,7 @@ This is the official repository for DeFi Scan - a mobile blockchain explorer bui
 
 ## Get it on
 <!-- [<img src="assets/screenshots/playstore_badge.png" width="250">](https://play.google.com/store/apps/details?id=dev.bisi.defiscan)   -->
-[<img src="assets/screenshots/appstore_badge.png" width="250">](https://apps.apple.com/us/app/)
+[<img src="assets/screenshots/appstore_badge.png" width="250">](https://apps.apple.com/us/app/defi-scan/id1644035976?platform=iphone)
 
 You can also try out a web demo on my flutter portfolio page [DeFi Scan](https://flutter.bisi.dev).
 
