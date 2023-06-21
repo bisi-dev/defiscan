@@ -13,15 +13,13 @@ class _Splash extends State<Splash> with SingleTickerProviderStateMixin {
 
   void _splashAnimation() {
     _animationController =
-        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
 
     _animation =
         CurvedAnimation(parent: _animationController, curve: Curves.easeInCirc);
 
     _animationController.forward().then((val) {
-      Future.delayed(const Duration(seconds: 1), () async {
-        Navigator.of(context).pushReplacementNamed(AppRoute.home);
-      });
+      Navigator.of(context).pushReplacementNamed(AppRoute.home);
     });
   }
 

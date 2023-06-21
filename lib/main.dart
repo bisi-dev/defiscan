@@ -1,8 +1,12 @@
-import 'core/app_core.dart';
-import 'domain/app_domain.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+import 'core/app_core.dart';
+import 'shared/services/prefs/app_preferences.dart';
+import 'shared/themes/theme_cubit.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await AppPreferences.init();
   runApp(const MyApp());
 }
 
@@ -11,22 +15,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(value: ThemeNotifier()),
-        ChangeNotifierProvider.value(value: RemoteRepository()),
-      ],
-      child: Consumer<ThemeNotifier>(
-          builder: (context, ThemeNotifier themeNotifier, child) {
-        return MaterialApp(
-          theme: themeNotifier.darkTheme
-              ? AppTheme.darkTheme()
-              : AppTheme.lightTheme(),
-          debugShowCheckedModeBanner: false,
-          initialRoute: AppRoute.splash,
-          onGenerateRoute: RouteGenerator.generateRoute,
-        );
-      }),
+    return BlocProvider(
+      create: (context) => ThemeCubit(),
+      child: BlocBuilder<ThemeCubit, ThemeState>(
+        builder: (context, state) {
+          return MaterialApp(
+            theme: AppTheme.lightTheme(),
+            darkTheme: AppTheme.darkTheme(),
+            themeMode: state.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+            debugShowCheckedModeBanner: false,
+            initialRoute: AppRoute.splash,
+            onGenerateRoute: RouteGenerator.generateRoute,
+          );
+        },
+      ),
     );
   }
 }
