@@ -12,7 +12,6 @@ dependencies:
 
   bloc: ^8.1.2
   cupertino_icons: ^1.0.2
-  animated_splash_screen: ^1.2.0
   bottom_navy_bar: ^6.0.0
   cached_network_image: ^3.2.0
   ethers:
