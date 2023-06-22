@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/app_core.dart';
 import 'shared/services/prefs/app_preferences.dart';
+import 'shared/themes/app_theme.dart';
 import 'shared/themes/theme_cubit.dart';
 
 void main() async {

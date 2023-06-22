@@ -1,6 +1,8 @@
 import 'package:defiscan/core/app_core.dart';
 import "package:google_fonts/google_fonts.dart";
 
+import 'app_style.dart';
+
 class AppTheme {
   static ThemeData lightTheme() {
     final ThemeData base = ThemeData.light();

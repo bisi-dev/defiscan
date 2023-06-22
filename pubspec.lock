@@ -65,14 +65,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  bottom_navy_bar:
-    dependency: "direct main"
-    description:
-      name: bottom_navy_bar
-      sha256: b30d9a566909b9a56f366b9e8abe0c24ef8939e4b464d1cad5ded6a1e2dcfca1
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.0"
   bs58check:
     dependency: transitive
     description:
@@ -287,22 +279,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  flutter_settings_ui:
-    dependency: "direct main"
-    description:
-      name: flutter_settings_ui
-      sha256: cde4a0613b52e2f866579b05fcc84687ed23d00717bb6e3cbb048aa7bd5541d5
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.1"
-  flutter_swipe_action_cell:
-    dependency: "direct main"
-    description:
-      name: flutter_swipe_action_cell
-      sha256: c77baca62a6274980c57775672e62af6a3a05e0c3eeecc9b3ed5fb0574ae89c1
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -313,14 +289,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  font_awesome_flutter:
-    dependency: "direct main"
-    description:
-      name: font_awesome_flutter
-      sha256: "1f93e5799f0e6c882819e8393a05c6ca5226010f289190f2242ec19f3f0fdba5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "9.2.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -329,14 +297,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
-  getwidget:
-    dependency: "direct main"
-    description:
-      name: getwidget
-      sha256: f98a1a96d946e640e4b5e3bd1fd692a50b53f3d1afc8c128f098139a0cf5607e
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.1"
   glob:
     dependency: transitive
     description:
@@ -417,14 +377,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
-  launch_review:
-    dependency: "direct main"
-    description:
-      name: launch_review
-      sha256: "04cdaf752033cefd53bc0fa9c22105801ef53791a93d8b6cdd00fcb3c1c1604b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.1"
   lints:
     dependency: transitive
     description:
@@ -433,14 +385,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
-  loading_animation_widget:
-    dependency: "direct main"
-    description:
-      name: loading_animation_widget
-      sha256: "1901682600273a966c34cf44a85fc5355da92a8d08a8a43c11adc4e471993e3a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.0+4"
   logging:
     dependency: transitive
     description:
@@ -618,7 +562,7 @@ packages:
     source: hosted
     version: "4.2.4"
   provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: provider
       sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
@@ -783,7 +727,7 @@ packages:
     source: hosted
     version: "1.9.1"
   sqflite:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: sqflite
       sha256: b4d6710e1200e96845747e37338ea8a819a12b51689a3bcf31eff0003b37a0b9
@@ -870,14 +814,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
-  timeago:
-    dependency: "direct main"
-    description:
-      name: timeago
-      sha256: "46c128312ab0ea144b146c0ac6426ddd96810efec2de3fccc425d00179cd8254"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.3.0"
   typed_data:
     dependency: transitive
     description:
