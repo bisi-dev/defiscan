@@ -1,3 +1,4 @@
+import 'package:defiscan/features/dashboard/screens/dashboard.dart';
 import 'package:defiscan/features/onboarding/screens/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class RouteGenerator {
       case AppRoute.splash:
         return buildRoute(const Splash(), settings: settings);
       case AppRoute.home:
-        return buildRoute(const SizedBox(), settings: settings);
+        return buildRoute(const Dashboard(), settings: settings);
       default:
         return buildRoute(const SizedBox(), settings: settings);
     }

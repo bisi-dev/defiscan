@@ -18,15 +18,18 @@ class _Splash extends State<Splash> with SingleTickerProviderStateMixin {
     _animation =
         CurvedAnimation(parent: _animationController, curve: Curves.easeInCirc);
 
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     _animationController.forward().then((val) {
-      Navigator.of(context).pushReplacementNamed(AppRoute.home);
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: [SystemUiOverlay.top]);
+      Navigator.of(context)
+          .pushNamedAndRemoveUntil(AppRoute.home, (route) => false);
     });
   }
 
   @override
   void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     _splashAnimation();
   }
 
