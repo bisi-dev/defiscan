@@ -13,39 +13,51 @@ class SettingsContent {
 
   static const List<SettingsContent> list = [
     SettingsContent(
-      title: 'App',
+      title: 'app',
       leading: null,
       route: "",
     ),
     SettingsContent(
-      title: 'Language',
+      title: 'language',
       leading: Icons.language,
       route: AppRoute.languages,
     ),
     SettingsContent(
-      title: 'Currency',
+      title: 'currency',
       leading: Icons.currency_exchange,
       route: AppRoute.currencies,
     ),
     SettingsContent(
-      title: 'Networks',
+      title: 'networks',
       leading: Icons.currency_bitcoin,
       route: AppRoute.currencies,
     ),
     SettingsContent(
-      title: 'Dark Mode',
+      title: 'dark_mode',
       leading: Icons.dark_mode_outlined,
       route: "",
     ),
     SettingsContent(
-      title: 'More',
+      title: 'more',
       leading: null,
       route: "",
     ),
     SettingsContent(
-      title: 'Rate App on App Store',
+      title: 'rate_app',
       leading: Icons.rate_review_outlined,
       route: "store",
     ),
   ];
+
+  String provideSubtitle() {
+    switch (title) {
+      case 'language':
+        return AppLocale.list
+            .firstWhere((e) => e.code == AppPreferences.languageCode)
+            .value
+            .i18n();
+      default:
+        return "";
+    }
+  }
 }

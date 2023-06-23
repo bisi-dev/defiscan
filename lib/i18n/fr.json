@@ -1,5 +1,15 @@
 {
   "settings": "Paramètres",
   "history": "Histoire",
-  "explorer": "Explorateur"
+  "explorer": "Explorateur",
+  "app": "App",
+  "more": "Plus",
+  "languages": "Langues",
+  "language": "Langue",
+  "currency": "Monnaie",
+  "networks": "Réseaux",
+  "dark_mode": "Mode sombre",
+  "rate_app": "Évaluez l'application sur l'App Store",
+  "english": "Anglais",
+  "french": "Français"
 }

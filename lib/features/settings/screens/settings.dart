@@ -2,9 +2,12 @@ import 'package:defiscan/core/app_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../shared/locale/app_locale.dart';
+import '../../../shared/prefs/app_preferences.dart';
 import '../../../shared/services/store/store_service.dart';
 import '../../../shared/theme/app_style.dart';
 import '../bloc/settings_cubit.dart';
+import 'widgets/app_bar.dart';
 
 part 'settings_content.dart';
 
@@ -14,11 +17,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text('settings'.i18n()),
-      ),
+      appBar: SettingsAppBar(title: 'settings'.i18n(), canPop: false),
       body: _buildSettingsList(context),
     );
   }
@@ -34,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
             if (item.leading == null) {
               return Padding(
                 padding: const EdgeInsets.fromLTRB(20, 12, 12, 0),
-                child: Text(item.title),
+                child: Text(item.title.i18n()),
               );
             } else {
               return InkWell(
@@ -47,11 +46,11 @@ class SettingsScreen extends StatelessWidget {
                   }
                 },
                 child: ListTile(
-                  title: Text(item.title, style: AppStyle.link),
+                  title: Text(item.title.i18n(), style: AppStyle.link),
                   leading: Icon(item.leading),
                   dense: true,
                   trailing:
-                      item.route.isEmpty ? _darkModeToggle() : const Text(''),
+                      item.route.isEmpty ? _darkModeToggle() : _subtitle(item),
                   visualDensity: const VisualDensity(vertical: -3),
                 ),
               );
@@ -83,6 +82,27 @@ class SettingsScreen extends StatelessWidget {
             value: state.isDarkMode,
             onChanged: (val) => context.read<SettingsCubit>().toggleTheme());
       },
+    );
+  }
+
+  Widget _subtitle(SettingsContent item) {
+    return FittedBox(
+      child: Row(
+        children: [
+          Text(
+            item.provideSubtitle(),
+            style: const TextStyle(
+              color: AppColor.kFairGrey,
+            ),
+          ),
+          const SizedBox(width: 4),
+          const Icon(
+            Icons.arrow_forward_ios_sharp,
+            color: AppColor.kFairGrey,
+            size: 14,
+          )
+        ],
+      ),
     );
   }
 }

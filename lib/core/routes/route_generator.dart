@@ -1,5 +1,6 @@
 import 'package:defiscan/features/dashboard/screens/dashboard.dart';
 import 'package:defiscan/features/onboarding/screens/splash.dart';
+import 'package:defiscan/features/settings/screens/languages.dart';
 import 'package:flutter/material.dart';
 
 import 'app_route.dart';
@@ -11,6 +12,8 @@ class RouteGenerator {
         return buildRoute(const SplashScreen(), settings: settings);
       case AppRoute.home:
         return buildRoute(const Dashboard(), settings: settings);
+      case AppRoute.languages:
+        return buildRoute(const LanguagesScreen(), settings: settings);
       default:
         return buildRoute(const SizedBox(), settings: settings);
     }

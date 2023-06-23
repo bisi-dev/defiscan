@@ -1,5 +1,15 @@
 {
   "settings": "Settings",
   "history": "History",
-  "explorer": "Explorer"
+  "explorer": "Explorer",
+  "app": "App",
+  "more": "More",
+  "languages": "Languages",
+  "language": "Language",
+  "currency": "Currency",
+  "networks": "Networks",
+  "dark_mode": "Dark Mode",
+  "rate_app": "Rate App on App Store",
+  "english": "English",
+  "french": "French"
 }

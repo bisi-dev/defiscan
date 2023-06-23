@@ -10,12 +10,13 @@ part 'dashboard_content.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
-  static final PageController _pageController = PageController(initialPage: 1);
-
   @override
   Widget build(BuildContext context) {
+    final page = ModalRoute.of(context)!.settings.arguments as int?;
+    PageController _pageController = PageController(initialPage: page ?? 1);
+
     return BlocProvider(
-      create: (context) => DashboardCubit(),
+      create: (context) => DashboardCubit()..swipeTo(page ?? 1),
       child: BlocBuilder<DashboardCubit, DashboardState>(
         builder: (context, state) {
           return Scaffold(

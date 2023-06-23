@@ -8,7 +8,7 @@ class AppLocale {
   });
 
   static const List<AppLocale> list = [
-    AppLocale(code: 'en', value: 'English'),
-    AppLocale(code: 'fr', value: 'French'),
+    AppLocale(code: 'en', value: 'english'),
+    AppLocale(code: 'fr', value: 'french'),
   ];
 }
