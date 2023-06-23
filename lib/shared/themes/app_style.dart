@@ -57,7 +57,7 @@ class AppStyle {
   );
 
   static const TextStyle link = TextStyle(
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     fontSize: 16,
   );
 

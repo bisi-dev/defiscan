@@ -1,13 +1,14 @@
 import 'package:defiscan/core/app_core.dart';
 
-class Splash extends StatefulWidget {
-  const Splash({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  _Splash createState() => _Splash();
+  _SplashScreen createState() => _SplashScreen();
 }
 
-class _Splash extends State<Splash> with SingleTickerProviderStateMixin {
+class _SplashScreen extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
 

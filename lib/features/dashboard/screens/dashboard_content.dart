@@ -15,6 +15,6 @@ class DashboardContent {
     DashboardContent(title: 'History', icon: Icons.history, child: SizedBox()),
     DashboardContent(title: 'Explorer', icon: Icons.search, child: SizedBox()),
     DashboardContent(
-        title: 'Settings', icon: Icons.settings, child: SizedBox()),
+        title: 'Settings', icon: Icons.settings, child: SettingsScreen()),
   ];
 }

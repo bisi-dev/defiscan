@@ -8,7 +8,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoute.splash:
-        return buildRoute(const Splash(), settings: settings);
+        return buildRoute(const SplashScreen(), settings: settings);
       case AppRoute.home:
         return buildRoute(const Dashboard(), settings: settings);
       default:
