@@ -1,10 +1,18 @@
 part of 'settings_cubit.dart';
 
-abstract class SettingsState extends Equatable {
-  const SettingsState();
-}
+@immutable
+class SettingsState extends Equatable {
+  final bool isDarkMode;
+  final String languageCode;
 
-class SettingsInitial extends SettingsState {
+  const SettingsState({required this.isDarkMode, required this.languageCode});
+
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [isDarkMode, languageCode];
+
+  SettingsState copyWith({bool? isDarkMode, String? languageCode}) =>
+      SettingsState(
+        isDarkMode: isDarkMode ?? this.isDarkMode,
+        languageCode: languageCode ?? this.languageCode,
+      );
 }

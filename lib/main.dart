@@ -1,9 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/app_core.dart';
-import 'shared/services/prefs/app_preferences.dart';
-import 'shared/themes/app_theme.dart';
-import 'shared/themes/theme_cubit.dart';
+import 'features/settings/bloc/settings_cubit.dart';
+import 'shared/locale/app_locale.dart';
+import 'shared/prefs/app_preferences.dart';
+import 'shared/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,8 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ThemeCubit(),
-      child: BlocBuilder<ThemeCubit, ThemeState>(
+      create: (context) => SettingsCubit(),
+      child: BlocBuilder<SettingsCubit, SettingsState>(
         builder: (context, state) {
           return MaterialApp(
             theme: AppTheme.lightTheme(),
@@ -27,6 +29,15 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             initialRoute: AppRoute.splash,
             onGenerateRoute: RouteGenerator.generateRoute,
+            locale: Locale(state.languageCode),
+            supportedLocales:
+                AppLocale.list.map((e) => Locale(e.code)).toList(),
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              LocalJsonLocalization.delegate,
+            ],
           );
         },
       ),

@@ -38,7 +38,7 @@ class Dashboard extends StatelessWidget {
               },
               items: DashboardContent.list
                   .map((e) => CustomNavigationBarItem(
-                        title: Text(e.title),
+                        title: Text(e.title.i18n()),
                         icon: Icon(e.icon),
                       ))
                   .toList(),

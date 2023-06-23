@@ -1,5 +1,6 @@
 export 'package:flutter/material.dart';
 export 'package:flutter/services.dart';
+export 'package:localization/localization.dart';
 
 //constants
 export 'constants/color_constant.dart';

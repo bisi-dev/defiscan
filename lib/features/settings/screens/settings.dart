@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../shared/services/store/store_service.dart';
-import '../../../shared/themes/app_style.dart';
-import '../../../shared/themes/theme_cubit.dart';
+import '../../../shared/theme/app_style.dart';
+import '../bloc/settings_cubit.dart';
 
 part 'settings_content.dart';
 
@@ -17,7 +17,7 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: const Text('Settings'),
+        title: Text('settings'.i18n()),
       ),
       body: _buildSettingsList(context),
     );
@@ -39,8 +39,12 @@ class SettingsScreen extends StatelessWidget {
             } else {
               return InkWell(
                 onTap: () {
-                  if (item.route == "store") StoreService.launchStore();
-                  Navigator.pushNamed(context, item.route);
+                  if (item.route.isEmpty) return;
+                  if (item.route == "store") {
+                    StoreService.launchStore();
+                  } else {
+                    Navigator.pushNamed(context, item.route);
+                  }
                 },
                 child: ListTile(
                   title: Text(item.title, style: AppStyle.link),
@@ -73,11 +77,11 @@ class SettingsScreen extends StatelessWidget {
   }
 
   Widget _darkModeToggle() {
-    return BlocBuilder<ThemeCubit, ThemeState>(
+    return BlocBuilder<SettingsCubit, SettingsState>(
       builder: (context, state) {
         return CupertinoSwitch(
             value: state.isDarkMode,
-            onChanged: (val) => context.read<ThemeCubit>().toggle());
+            onChanged: (val) => context.read<SettingsCubit>().toggleTheme());
       },
     );
   }
