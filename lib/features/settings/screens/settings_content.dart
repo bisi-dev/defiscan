@@ -30,7 +30,7 @@ class SettingsContent {
     SettingsContent(
       title: 'networks',
       leading: Icons.currency_bitcoin,
-      route: AppRoute.currencies,
+      route: AppRoute.networks,
     ),
     SettingsContent(
       title: 'dark_mode',

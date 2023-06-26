@@ -24,8 +24,10 @@ class CurrenciesScreen extends StatelessWidget {
                 final item = Currency.list[index];
 
                 return InkWell(
+                  splashColor: Colors.grey.withOpacity(0.2),
                   onTap: () {
                     context.read<SettingsCubit>().switchCurrency(item.code);
+                    Navigator.pop(context);
                   },
                   child: ListTile(
                     title: Text(

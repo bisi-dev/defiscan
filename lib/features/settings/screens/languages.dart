@@ -24,6 +24,7 @@ class LanguagesScreen extends StatelessWidget {
                 final item = AppLocale.list[index];
 
                 return InkWell(
+                  splashColor: Colors.grey.withOpacity(0.2),
                   onTap: () async {
                     if (state.languageCode == item.code) return;
                     context.read<SettingsCubit>().switchLocale(item.code);

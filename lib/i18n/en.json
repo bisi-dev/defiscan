@@ -16,5 +16,7 @@
   "aud": "Australian Dollar",
   "eur": "European Euros",
   "gbp": "Great British Pounds",
-  "usd": "United States Dollars"
+  "usd": "United States Dollars",
+  "select_network": "Select Blockchain networks",
+  "apply": "Apply"
 }

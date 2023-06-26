@@ -18,6 +18,10 @@ class AppTheme {
       primaryColor: AppColor.kWhite,
       canvasColor: AppColor.kWhite,
       scaffoldBackgroundColor: AppColor.kWhite,
+      splashColor: Colors.transparent,
+      focusColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
       textTheme: GoogleFonts.workSansTextTheme(),
       appBarTheme: AppBarTheme(
         elevation: 0,
@@ -42,6 +46,10 @@ class AppTheme {
       primaryColor: AppColor.kDarkGrey,
       canvasColor: AppColor.kDarkGrey,
       scaffoldBackgroundColor: AppColor.kDarkGrey,
+      splashColor: Colors.transparent,
+      focusColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
       textTheme:
           GoogleFonts.workSansTextTheme().apply(bodyColor: AppColor.kWhite),
       appBarTheme: AppBarTheme(
