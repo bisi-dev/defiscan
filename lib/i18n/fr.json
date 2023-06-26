@@ -7,9 +7,14 @@
   "languages": "Langues",
   "language": "Langue",
   "currency": "Monnaie",
+  "currencies": "Devises",
   "networks": "Réseaux",
   "dark_mode": "Mode sombre",
   "rate_app": "Évaluez l'application sur l'App Store",
-  "english": "Anglais",
-  "french": "Français"
+  "en": "Anglais",
+  "fr": "Français",
+  "aud": "Dollar Australien",
+  "eur": "Euros Européens",
+  "gbp": "Livres Britanniques",
+  "usd": "Dollars des États-Unis"
 }

@@ -24,4 +24,10 @@ class AppPreferences {
 
   static set languageCode(String value) =>
       _sharedPrefs.setString(PrefsConstants.languageCode, value);
+
+  static String get currencyCode =>
+      _sharedPrefs.getString(PrefsConstants.currencyCode) ?? "usd";
+
+  static set currencyCode(String value) =>
+      _sharedPrefs.setString(PrefsConstants.currencyCode, value);
 }

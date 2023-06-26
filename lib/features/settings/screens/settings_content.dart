@@ -49,13 +49,12 @@ class SettingsContent {
     ),
   ];
 
-  String provideSubtitle() {
+  String provideSubtitle(SettingsState settingsState) {
     switch (title) {
       case 'language':
-        return AppLocale.list
-            .firstWhere((e) => e.code == AppPreferences.languageCode)
-            .value
-            .i18n();
+        return settingsState.languageCode.i18n();
+      case 'currency':
+        return settingsState.currencyCode.i18n();
       default:
         return "";
     }

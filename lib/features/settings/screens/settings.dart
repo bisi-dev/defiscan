@@ -2,8 +2,6 @@ import 'package:defiscan/core/app_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../shared/locale/app_locale.dart';
-import '../../../shared/prefs/app_preferences.dart';
 import '../../../shared/services/store/store_service.dart';
 import '../../../shared/theme/app_style.dart';
 import '../bloc/settings_cubit.dart';
@@ -30,6 +28,7 @@ class SettingsScreen extends StatelessWidget {
           itemCount: SettingsContent.list.length,
           itemBuilder: (_, index) {
             final item = SettingsContent.list[index];
+            final state = context.watch<SettingsCubit>().state;
             if (item.leading == null) {
               return Padding(
                 padding: const EdgeInsets.fromLTRB(20, 12, 12, 0),
@@ -49,8 +48,9 @@ class SettingsScreen extends StatelessWidget {
                   title: Text(item.title.i18n(), style: AppStyle.link),
                   leading: Icon(item.leading),
                   dense: true,
-                  trailing:
-                      item.route.isEmpty ? _darkModeToggle() : _subtitle(item),
+                  trailing: item.route.isEmpty
+                      ? _darkModeToggle()
+                      : _subtitle(item, state),
                   visualDensity: const VisualDensity(vertical: -3),
                 ),
               );
@@ -85,12 +85,12 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _subtitle(SettingsContent item) {
+  Widget _subtitle(SettingsContent item, SettingsState state) {
     return FittedBox(
       child: Row(
         children: [
           Text(
-            item.provideSubtitle(),
+            item.provideSubtitle(state),
             style: const TextStyle(
               color: AppColor.kFairGrey,
             ),

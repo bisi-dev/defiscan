@@ -11,6 +11,7 @@ class SettingsCubit extends Cubit<SettingsState> {
       : super(SettingsState(
           isDarkMode: AppPreferences.isDarkMode,
           languageCode: AppPreferences.languageCode,
+          currencyCode: AppPreferences.currencyCode,
         ));
 
   toggleTheme() {
@@ -21,5 +22,10 @@ class SettingsCubit extends Cubit<SettingsState> {
   switchLocale(String code) {
     AppPreferences.languageCode = code;
     emit(state.copyWith(languageCode: AppPreferences.languageCode));
+  }
+
+  switchCurrency(String code) {
+    AppPreferences.currencyCode = code;
+    emit(state.copyWith(currencyCode: AppPreferences.currencyCode));
   }
 }

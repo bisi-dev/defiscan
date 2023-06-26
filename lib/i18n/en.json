@@ -7,9 +7,14 @@
   "languages": "Languages",
   "language": "Language",
   "currency": "Currency",
+  "currencies": "Currencies",
   "networks": "Networks",
   "dark_mode": "Dark Mode",
   "rate_app": "Rate App on App Store",
-  "english": "English",
-  "french": "French"
+  "en": "English",
+  "fr": "French",
+  "aud": "Australian Dollar",
+  "eur": "European Euros",
+  "gbp": "Great British Pounds",
+  "usd": "United States Dollars"
 }

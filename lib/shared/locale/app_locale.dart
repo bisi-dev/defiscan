@@ -1,14 +1,10 @@
 class AppLocale {
   final String code;
-  final String value;
 
-  const AppLocale({
-    required this.code,
-    required this.value,
-  });
+  const AppLocale({required this.code});
 
   static const List<AppLocale> list = [
-    AppLocale(code: 'en', value: 'english'),
-    AppLocale(code: 'fr', value: 'french'),
+    AppLocale(code: 'en'),
+    AppLocale(code: 'fr'),
   ];
 }
