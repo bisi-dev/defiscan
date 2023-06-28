@@ -61,23 +61,23 @@ class NetworksScreen extends StatelessWidget {
   List<Widget> getNetworksListUI(SettingsCubit sCubit) {
     final List<Widget> list = <Widget>[];
     for (int i = 0; i < Network.list.length; i++) {
-      final String network = Network.list[i];
+      final network = Network.list[i];
 
       list.add(
         InkWell(
           borderRadius: borderRadius4,
-          onTap: () => sCubit.setNetworks(network),
+          onTap: () => sCubit.setNetworks(network.chain),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Expanded(child: Text(network)),
+                Expanded(child: Text(network.chain)),
                 CupertinoSwitch(
-                  activeColor: sCubit.state.networks.contains(network)
+                  activeColor: sCubit.state.networks.contains(network.chain)
                       ? AppColor.kMainColor
                       : Colors.grey.withOpacity(0.6),
-                  onChanged: (bool value) => sCubit.setNetworks(network),
-                  value: sCubit.state.networks.contains(network),
+                  onChanged: (bool value) => sCubit.setNetworks(network.chain),
+                  value: sCubit.state.networks.contains(network.chain),
                 ),
               ],
             ),

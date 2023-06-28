@@ -10,7 +10,12 @@ import 'shared/theme/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppPreferences.init();
-  runApp(const MyApp());
+  runApp(
+    MultiRepositoryProvider(
+      providers: repositoryProviders,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

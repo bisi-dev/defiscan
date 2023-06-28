@@ -33,7 +33,8 @@ class AppPreferences {
       _sharedPrefs.setString(PrefsConstants.currencyCode, value);
 
   static List<String> get networks =>
-      _sharedPrefs.getStringList(PrefsConstants.networks) ?? Network.list;
+      _sharedPrefs.getStringList(PrefsConstants.networks) ??
+      Network.list.map((e) => e.chain).toList();
 
   static set networks(List<String> value) =>
       _sharedPrefs.setStringList(PrefsConstants.networks, value);

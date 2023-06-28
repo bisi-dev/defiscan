@@ -13,6 +13,7 @@ dependencies:
   bloc: ^8.1.2
   cupertino_icons: ^1.0.5
   cached_network_image: ^3.2.3
+  dartz: ^0.10.1
   ethers:
     git:
       url: https://github.com/bisi-dev/ethers.git
@@ -25,6 +26,7 @@ dependencies:
   http: ^0.13.6
   intl: ^0.18.0
   localization: ^2.1.0
+  lottie: ^2.4.0
   meta: ^1.9.1
   shared_preferences: ^2.1.2
   url_launcher: ^6.1.11
@@ -40,4 +42,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/json/
     - lib/i18n/

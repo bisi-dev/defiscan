@@ -18,5 +18,14 @@
   "gbp": "Livres Britanniques",
   "usd": "Dollars des États-Unis",
   "select_network": "Sélectionner les réseaux Blockchain",
-  "apply": "Appliquer"
+  "apply": "Appliquer",
+  "filter": "Filtrer",
+  "search_hint": "Rechercher des comptes / adresses",
+  "start_search": "Commencez par effectuer une recherche",
+  "refreshing": "Actualisation des données",
+  "searching": "Recherche en cours",
+  "failed_retrieve": "Échec de la récupération de l'adresse",
+  "failed_retrieve_account": "Échec de la récupération du compte %s",
+  "retrieve_account": "Récupération du compte %s en cours",
+  "account_found": "Compte %s trouvé"
 }

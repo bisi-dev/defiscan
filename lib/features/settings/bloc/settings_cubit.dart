@@ -43,7 +43,7 @@ class SettingsCubit extends Cubit<SettingsState> {
       list.add("All");
     }
     if (network == "All") {
-      list.addAll(Network.list);
+      list.addAll(Network.list.map((e) => e.chain).toList());
     }
     emit(state.copyWith(networks: list.toSet().toList()));
   }

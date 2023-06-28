@@ -24,6 +24,7 @@ class SettingsScreen extends StatelessWidget {
     return Column(
       children: [
         ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: SettingsContent.list.length,
           itemBuilder: (_, index) {

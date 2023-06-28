@@ -1,6 +1,9 @@
 import 'package:defiscan/core/app_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../explorer/bloc/explorer_cubit.dart';
+import '../../explorer/repository/explorer_repository.dart';
+import '../../explorer/screens/explorer.dart';
 import '../../settings/screens/settings.dart';
 import '../bloc/dashboard_cubit.dart';
 import 'widgets/custom_navigation_bar.dart';
@@ -15,8 +18,14 @@ class Dashboard extends StatelessWidget {
     final page = ModalRoute.of(context)!.settings.arguments as int?;
     PageController _pageController = PageController(initialPage: page ?? 1);
 
-    return BlocProvider(
-      create: (context) => DashboardCubit()..swipeTo(page ?? 1),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => DashboardCubit()..swipeTo(page ?? 1)),
+        BlocProvider(
+          create: (context) =>
+              ExplorerCubit(RepositoryProvider.of<ExplorerRepository>(context)),
+        )
+      ],
       child: BlocBuilder<DashboardCubit, DashboardState>(
         builder: (context, state) {
           return Scaffold(
