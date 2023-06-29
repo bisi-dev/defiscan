@@ -5,11 +5,13 @@ import 'core/app_core.dart';
 import 'features/settings/bloc/settings_cubit.dart';
 import 'shared/locale/app_locale.dart';
 import 'shared/prefs/app_preferences.dart';
+import 'shared/services/storage/storage_service.dart';
 import 'shared/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppPreferences.init();
+  await StorageService.initLocalDatabase();
   runApp(
     MultiRepositoryProvider(
       providers: repositoryProviders,

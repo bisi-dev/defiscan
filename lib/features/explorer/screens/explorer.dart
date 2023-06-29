@@ -2,6 +2,7 @@ import 'package:defiscan/core/app_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../history/bloc/history_cubit.dart';
 import '../bloc/explorer_cubit.dart';
 import 'widgets/contest_tab_header.dart';
 import 'widgets/explorer_card.dart';
@@ -39,7 +40,12 @@ class _ExplorerScreenState extends State<ExplorerScreen>
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ExplorerCubit, ExplorerState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is ExplorerSuccess) {
+          final hCubit = context.read<HistoryCubit>();
+          hCubit.addHistory(state.data.accountList);
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.shadow,

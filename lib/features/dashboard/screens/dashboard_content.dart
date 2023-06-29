@@ -12,7 +12,8 @@ class DashboardContent {
   });
 
   static const List<DashboardContent> list = [
-    DashboardContent(title: 'history', icon: Icons.history, child: SizedBox()),
+    DashboardContent(
+        title: 'history', icon: Icons.history, child: HistoryScreen()),
     DashboardContent(
         title: 'explorer', icon: Icons.search, child: ExplorerScreen()),
     DashboardContent(

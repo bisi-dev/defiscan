@@ -53,4 +53,5 @@ const BorderRadius borderRadius100 = BorderRadius.all(Radius.circular(100.0));
 const BorderRadius borderRadius36 = BorderRadius.all(Radius.circular(36.0));
 const BorderRadius borderRadius24 = BorderRadius.all(Radius.circular(24.0));
 const BorderRadius borderRadius16 = BorderRadius.all(Radius.circular(16.0));
+const BorderRadius borderRadius8 = BorderRadius.all(Radius.circular(8.0));
 const BorderRadius borderRadius4 = BorderRadius.all(Radius.circular(4.0));

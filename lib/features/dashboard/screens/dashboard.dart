@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../explorer/bloc/explorer_cubit.dart';
 import '../../explorer/repository/explorer_repository.dart';
 import '../../explorer/screens/explorer.dart';
+import '../../history/bloc/history_cubit.dart';
+import '../../history/screens/history.dart';
 import '../../settings/screens/settings.dart';
 import '../bloc/dashboard_cubit.dart';
 import 'widgets/custom_navigation_bar.dart';
@@ -21,6 +23,7 @@ class Dashboard extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => DashboardCubit()..swipeTo(page ?? 1)),
+        BlocProvider(create: (context) => HistoryCubit()..getHistory()),
         BlocProvider(
           create: (context) =>
               ExplorerCubit(RepositoryProvider.of<ExplorerRepository>(context)),
