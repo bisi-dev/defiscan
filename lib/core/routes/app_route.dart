@@ -4,4 +4,5 @@ class AppRoute {
   static const String languages = "/languages";
   static const String currencies = "/currencies";
   static const String networks = "/networks";
+  static const String details = "/details";
 }

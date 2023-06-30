@@ -113,7 +113,7 @@ class ExplorerCubit extends Cubit<ExplorerState> {
         chain: n.chain,
         balance: "${balance.toStringAsFixed(6)} ${n.currency}",
         fiatBalance: "${fiatSymbol()} ${fiatBalance.formatCurrency()}",
-        image: AppImage.ethereumImage,
+        image: n.chain == "Ethereum" ? AppImage.ethereumImage : "",
         username: await explorerRepository.getETHUsername(entry),
         timestamp: DateTime.now(),
       );

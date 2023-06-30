@@ -136,7 +136,11 @@ class _ExplorerScreenState extends State<ExplorerScreen>
           );
           _animationController.forward();
           return ExplorerCard(
-            callback: () {},
+            callback: () {
+              if (accountList[index].image.isEmpty) return;
+              Navigator.pushNamed(context, AppRoute.details,
+                  arguments: accountList[index]);
+            },
             account: accountList[index],
             expandInfo: index == 0 ? true : false,
             animation: animation,

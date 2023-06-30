@@ -1,4 +1,5 @@
 import 'package:defiscan/features/dashboard/screens/dashboard.dart';
+import 'package:defiscan/features/explorer/screens/details.dart';
 import 'package:defiscan/features/onboarding/screens/splash.dart';
 import 'package:defiscan/features/settings/screens/currencies.dart';
 import 'package:defiscan/features/settings/screens/languages.dart';
@@ -20,6 +21,8 @@ class RouteGenerator {
         return buildRoute(const CurrenciesScreen(), settings: settings);
       case AppRoute.networks:
         return buildRoute(const NetworksScreen(), settings: settings);
+      case AppRoute.details:
+        return buildRoute(const DetailsScreen(), settings: settings);
       default:
         return buildRoute(const SizedBox(), settings: settings);
     }
