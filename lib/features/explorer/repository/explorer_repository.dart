@@ -6,12 +6,19 @@ import 'package:ethers/ethers.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:web_socket_channel/io.dart';
 
+import '../models/btc_txn_response.dart';
+import '../models/eth_txn_response.dart';
+
 abstract class ExplorerRepository {
   Future<Either<ErrorResponse, int>> getBalanceBTC(String address);
   Future<double> getCoinRate(String crypto);
   Future<String> getETHAddress(String entry);
   Future<String> getETHUsername(String address);
   Future<double> getBalanceETH(String address, String rpc);
+  Future<Either<ErrorResponse, EthTxnResponse>> getTransactionsETH(
+      String address, int count);
+  Future<Either<ErrorResponse, BtcTxnResponse>> getTransactionsBTC(
+      String address, int count);
 }
 
 class ExplorerRepositoryImpl extends ExplorerRepository {
@@ -19,9 +26,9 @@ class ExplorerRepositoryImpl extends ExplorerRepository {
   Future<Either<ErrorResponse, int>> getBalanceBTC(String address) async {
     try {
       final response = await NetworkService.get(
-          url: '${NetworkConstants.blockChainInfo}?active=$address');
+          url: '${NetworkConstants.blockChainInfo}/$address');
 
-      int balance = response[address]['final_balance'];
+      int balance = BtcTxnResponse.fromJson(response).finalBalance;
       return (Right(balance));
     } catch (e) {
       return Left(ErrorResponse.fromJson(e));
@@ -82,6 +89,37 @@ class ExplorerRepositoryImpl extends ExplorerRepository {
       return double.parse(ethers.utils.formatEther(balance));
     } catch (e) {
       return 0.00;
+    }
+  }
+
+  @override
+  Future<Either<ErrorResponse, EthTxnResponse>> getTransactionsETH(
+      String address, int count) async {
+    try {
+      final response = await NetworkService.get(
+          url:
+              '${NetworkConstants.mainnetURL}/?module=account&action=txlist&address=$address&startblock=0&endblock=99999999&page=1&offset=$count&sort=desc');
+
+      return Right(EthTxnResponse.fromJson(response));
+    } on NoSuchMethodError {
+      return Left(ErrorResponse.genericException(500, 'Server Timeout'));
+    } catch (e) {
+      return Left(ErrorResponse.fromJson(e));
+    }
+  }
+
+  @override
+  Future<Either<ErrorResponse, BtcTxnResponse>> getTransactionsBTC(
+      String address, int count) async {
+    try {
+      final response = await NetworkService.get(
+          url: '${NetworkConstants.blockChainInfo}/$address?limit=$count');
+
+      return Right(BtcTxnResponse.fromJson(response));
+    } on NoSuchMethodError {
+      return Left(ErrorResponse.genericException(500, 'Server Timeout'));
+    } catch (e) {
+      return Left(ErrorResponse.fromJson(e));
     }
   }
 }

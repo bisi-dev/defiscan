@@ -5,8 +5,8 @@ import '../../../../shared/theme/app_style.dart';
 import '../../../../shared/utils/extensions/app_extensions.dart';
 import '../../../explorer/models/account.dart';
 
-class HistoryListTile extends StatelessWidget {
-  const HistoryListTile({
+class HistoryCard extends StatelessWidget {
+  const HistoryCard({
     Key? key,
     required this.account,
     required this.animationController,
@@ -86,17 +86,19 @@ class HistoryListTile extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
+                        Text(account.balance,
+                            overflow: TextOverflow.ellipsis,
+                            style: AppStyle.medium),
                         Expanded(
-                          child: Text(account.balance,
+                          child: Text(
+                            account.timestamp.format(),
+                            textAlign: TextAlign.end,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w300,
+                              color: AppColor.kMainColor,
+                              fontSize: 20,
                               overflow: TextOverflow.ellipsis,
-                              style: AppStyle.medium),
-                        ),
-                        Text(
-                          account.timestamp.format(),
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w300,
-                            color: AppColor.kMainColor,
-                            fontSize: 20,
+                            ),
                           ),
                         ),
                       ],

@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:ui';
 
 import 'package:defiscan/core/app_core.dart';
+import 'package:flutter/cupertino.dart';
 
 import '../../../../shared/theme/app_decoration.dart';
 
@@ -47,4 +49,43 @@ copyAlert(BuildContext context, String text) {
       }).then((value) {
     timer.cancel();
   });
+}
+
+deleteAlert({
+  required BuildContext context,
+  required Function() action,
+}) {
+  showDialog(
+      context: context,
+      barrierColor: const Color(0xFF0B1E4B).withOpacity(0.5),
+      builder: (context) {
+        return BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+          child: CupertinoAlertDialog(
+            title: Text('delete_title'.i18n()),
+            content: Text('delete_content'.i18n()),
+            actions: <Widget>[
+              CupertinoDialogAction(
+                child: Text(
+                  'cancel'.i18n(),
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                ),
+                onPressed: () => Navigator.pop(context),
+              ),
+              CupertinoDialogAction(
+                onPressed: () {
+                  action();
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'delete'.i18n(),
+                  style: const TextStyle(color: AppColor.kRed),
+                ),
+              ),
+            ],
+          ),
+        );
+      });
 }

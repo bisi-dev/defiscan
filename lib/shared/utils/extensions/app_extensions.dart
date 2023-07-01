@@ -1,3 +1,5 @@
+import 'package:defiscan/core/app_core.dart';
+import 'package:defiscan/shared/prefs/app_preferences.dart';
 import 'package:intl/intl.dart';
 
 enum Crypto { btc, eth, ens }
@@ -34,7 +36,7 @@ extension TimeDifferenceCalculator on DateTime {
         DateTime.now().millisecondsSinceEpoch - millisecondsSinceEpoch;
 
     String prefix = '';
-    String suffix = 'ago';
+    String suffix = 'ago'.i18n();
 
     final num seconds = elapsed / 1000;
     final num minutes = seconds / 60;
@@ -45,25 +47,25 @@ extension TimeDifferenceCalculator on DateTime {
 
     String result;
     if (seconds < 45) {
-      result = 'a moment';
+      result = 'moment'.i18n();
     } else if (seconds < 90) {
-      result = 'a minute';
+      result = 'minute'.i18n();
     } else if (minutes < 45) {
-      result = '${minutes.round()} minutes';
+      result = 'minutes'.i18n(['${minutes.round()}']);
     } else if (minutes < 90) {
-      result = 'about an hour';
+      result = 'hour'.i18n();
     } else if (hours < 24) {
-      result = '${hours.round()} hours';
+      result = 'hours'.i18n(['${hours.round()}']);
     } else if (hours < 48) {
-      result = 'a day';
+      result = 'day'.i18n();
     } else if (days < 30) {
-      result = '$days days';
+      result = 'days'.i18n(['$days']);
     } else if (days < 60) {
-      result = 'about a month';
+      result = 'month'.i18n();
     } else if (days < 365) {
-      result = '${months.round()} months';
+      result = 'months'.i18n(['${months.round()}']);
     } else if (years < 2) {
-      result = '$years years';
+      result = 'years'.i18n(['${years.round()}']);
     } else {
       result = '';
     }
@@ -76,11 +78,18 @@ extension LengthRecorder on int {
   String record() {
     switch (this) {
       case 0:
-        return "Empty";
+        return 'empty'.i18n();
       case 1:
-        return "1 Record";
+        return 'record'.i18n();
       default:
-        return "$this Records";
+        return 'records'.i18n(['$this']);
     }
+  }
+}
+
+extension DateHelper on DateTime {
+  String formatDate() {
+    final formatter = DateFormat('dd MMMM yyyy', AppPreferences.languageCode);
+    return formatter.format(this);
   }
 }

@@ -8,6 +8,7 @@ class AppTheme {
     final ThemeData base = ThemeData.light();
     final ColorScheme colorScheme = const ColorScheme.light().copyWith(
       shadow: AppColor.kLightShadow,
+      surfaceTint: AppColor.kDarkShadow,
       primary: AppColor.kWhite,
       inversePrimary: AppColor.kDarkGrey,
       secondary: AppColor.kMainColor,
@@ -36,6 +37,7 @@ class AppTheme {
     final ThemeData base = ThemeData.dark();
     final ColorScheme colorScheme = const ColorScheme.dark().copyWith(
       shadow: AppColor.kDarkShadow,
+      surfaceTint: AppColor.kLightShadow,
       primary: AppColor.kDarkGrey,
       inversePrimary: AppColor.kWhite,
       secondary: AppColor.kMainColor,

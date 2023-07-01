@@ -18,7 +18,7 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final page = ModalRoute.of(context)!.settings.arguments as int?;
-    PageController _pageController = PageController(initialPage: page ?? 1);
+    PageController _pageController = PageController();
 
     return MultiBlocProvider(
       providers: [
@@ -31,6 +31,9 @@ class Dashboard extends StatelessWidget {
       ],
       child: BlocBuilder<DashboardCubit, DashboardState>(
         builder: (context, state) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _pageController.jumpToPage(state.currentIndex);
+          });
           return Scaffold(
             body: SizedBox.expand(
               child: PageView(
@@ -46,7 +49,6 @@ class Dashboard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               selectedIndex: state.currentIndex,
               onItemSelected: (index) {
-                _pageController.jumpToPage(index);
                 context.read<DashboardCubit>().swipeTo(index);
               },
               items: DashboardContent.list

@@ -9,11 +9,7 @@ class NetworkConstants {
   static const polygonRPC = 'https://rpc-mainnet.maticvigil.com/v1/$polygonId';
 
   static const mainnetURL = 'https://api.etherscan.io/api';
-  static const ropstenURL = 'https://api-ropsten.etherscan.io/api';
-  static const rinkebyURL = 'https://api-rinkeby.etherscan.io/api';
-  static const goerliURL = 'https://api-goerli.etherscan.io/api';
-  static const kovanURL = 'https://api-kovan.etherscan.io/api';
 
-  static const blockChainInfo = 'https://blockchain.info/balance';
+  static const blockChainInfo = 'https://blockchain.info/rawaddr';
   static const balanceInfo = 'https://api.coingecko.com/api/v3/simple/price';
 }

@@ -54,6 +54,7 @@ class HistoryCubit extends Cubit<HistoryState> {
       await StorageService.deleteAll(StorageService.historyBox);
     }
     await StorageService.deleteAll(StorageService.watchlistBox);
+    await Future.delayed(const Duration(seconds: 1));
     getHistory();
   }
 }

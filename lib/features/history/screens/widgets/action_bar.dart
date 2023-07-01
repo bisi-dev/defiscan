@@ -2,6 +2,7 @@ import 'package:defiscan/core/app_core.dart';
 
 import '../../../../shared/theme/app_decoration.dart';
 import '../../../../shared/utils/extensions/app_extensions.dart';
+import 'alert.dart';
 
 class ActionBar extends StatelessWidget {
   const ActionBar({
@@ -46,19 +47,20 @@ class ActionBar extends StatelessWidget {
                     ? InkWell(
                         splashColor: Colors.grey.withOpacity(0.2),
                         borderRadius: borderRadius4,
-                        onTap: function,
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 8),
+                        onTap: () =>
+                            deleteAlert(context: context, action: function),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8),
                           child: Row(
                             children: <Widget>[
                               Text(
-                                'Clear All',
-                                style: TextStyle(
+                                'clear'.i18n(),
+                                style: const TextStyle(
                                   fontWeight: FontWeight.w300,
                                   fontSize: 16,
                                 ),
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Icon(Icons.delete_forever,
                                     color: AppColor.kRed),
@@ -76,9 +78,7 @@ class ActionBar extends StatelessWidget {
           top: 0,
           left: 0,
           right: 0,
-          child: Divider(
-            height: 1,
-          ),
+          child: Divider(height: 1),
         )
       ],
     );

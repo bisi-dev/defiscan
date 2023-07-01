@@ -48,7 +48,7 @@ class Network {
       chain: 'Sepolia',
       currency: 'ETH',
       rpc: NetworkConstants.sepoliaRPC,
-      network: '',
+      network: 'ethereum',
     ),
   ];
 }

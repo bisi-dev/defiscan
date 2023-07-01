@@ -19,7 +19,7 @@ class NetworksScreen extends StatelessWidget {
         builder: (context, state) {
           final sCubit = context.read<SettingsCubit>();
           return Scaffold(
-            appBar: SettingsAppBar(title: 'Networks'.i18n()),
+            appBar: SettingsAppBar(title: 'networks'.i18n()),
             body: Column(
               children: <Widget>[
                 Expanded(
@@ -107,7 +107,7 @@ class NetworksScreen extends StatelessWidget {
               },
               child: Center(
                 child: Text(
-                  'Apply',
+                  'apply'.i18n(),
                   style: AppStyle.buttonText.copyWith(color: AppColor.kWhite),
                 ),
               ),

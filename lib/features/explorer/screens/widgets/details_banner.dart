@@ -27,7 +27,10 @@ class DetailsBanner extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 1.2,
-                child: CachedNetworkImage(imageUrl: account.image),
+                child: Container(
+                  color: Theme.of(context).primaryColor,
+                  child: CachedNetworkImage(imageUrl: account.image),
+                ),
               ),
               Positioned(
                 top: 16,

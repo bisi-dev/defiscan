@@ -2,6 +2,8 @@ import 'package:defiscan/core/app_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swipe_action_cell/flutter_swipe_action_cell.dart';
 
+import '../../dashboard/bloc/dashboard_cubit.dart';
+import '../../explorer/bloc/explorer_cubit.dart';
 import '../../explorer/models/account.dart';
 import '../../explorer/screens/widgets/contest_tab_header.dart';
 import '../bloc/history_cubit.dart';
@@ -170,12 +172,15 @@ class _HistoryScreenState extends State<HistoryScreen>
                 color: Colors.transparent,
                 onTap: (handler) async {
                   await Clipboard.setData(ClipboardData(text: account.id));
-                  copyAlert(context, "${account.chain} address copied");
+                  copyAlert(context, "address_copy".i18n([account.chain]));
                 },
               ),
             ],
-            child: HistoryListTile(
-              callback: () {},
+            child: HistoryCard(
+              callback: () {
+                context.read<DashboardCubit>().swipeTo(1);
+                context.read<ExplorerCubit>().getAccountList(account.id);
+              },
               account: historyList[index],
               animation: animation,
               animationController: _animationController,

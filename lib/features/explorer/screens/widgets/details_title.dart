@@ -29,7 +29,7 @@ class DetailsTitle extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
                       Expanded(
                         child: Text(
                           account.chain,
@@ -40,7 +40,7 @@ class DetailsTitle extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
                       Expanded(
                         child: Text(
                           account.id,
@@ -85,19 +85,15 @@ class DetailsTitle extends StatelessWidget {
                                 letterSpacing: 0.27,
                               ),
                             ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  account.fiatBalance,
-                                  textAlign: TextAlign.left,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 20,
-                                    letterSpacing: 0.27,
-                                    color: AppColor.kMainColor,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              account.fiatBalance,
+                              textAlign: TextAlign.left,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
+                                letterSpacing: 0.27,
+                                color: AppColor.kMainColor,
+                              ),
                             )
                           ],
                         ),
@@ -108,10 +104,10 @@ class DetailsTitle extends StatelessWidget {
               ),
               const SizedBox(height: 1),
               const Divider(),
-              const Align(
+              Align(
                 child: Text(
-                  'TRANSACTIONS',
-                  style: TextStyle(
+                  'transactions'.i18n().toUpperCase(),
+                  style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
