@@ -2,7 +2,6 @@
 This is the official repository for DeFi Scan - a mobile blockchain explorer built with Dart/Flutter for searching, curating and storing details of cryptocurrency accounts.
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green)](https://opensource.org/licenses/Apache-2.0)
-[![Codemagic build status](https://api.codemagic.io/apps/634695f7e6fd8707a9c2015c/634695f7e6fd8707a9c2015b/status_badge.svg)](https://codemagic.io/apps/634695f7e6fd8707a9c2015c/634695f7e6fd8707a9c2015b/latest_build)
 
 ## Get it on
 <!-- [<img src="assets/screenshots/playstore_badge.png" width="250">](https://play.google.com/store/apps/details?id=dev.bisi.defiscan)   -->
@@ -20,46 +19,23 @@ You can also try out a web demo on my flutter portfolio page [DeFi Scan](https:/
 ## Development - Mini Documentation
 
 ### VERSIONING
-- Dart: >= 2.12.0 < 3.0.0
-- Flutter: Flutter 3.0.2
-- State Management: Provider 6.0.0
+- Dart: >= 3.0.0 < 4.0.0
+- Flutter: Flutter 3.10.3
+- State Management: BLOC 8.1.0
 - Other Packages : [List](pubspec.yaml)
 
 ### STRUCTURE
-This project currently implements a Dev Layer-First File Structure. Current High Level Look:
-```
-‣ lib
-  ‣ core
-    ‣ constants
-    ‣ routes
-    ‣ themes
-    ‣ utils
-  ‣ data
-    ‣ prefs
-    ‣ models
-    ‣ services
-  ‣ domain
-    ‣ providers
-    ‣ repositories
-    ‣ state
-  ‣ presentation
-    ‣ pages
-    ‣ components
-  main.dart
-```
-System Design for Seperation of Concerns:
+This project currently implements a Dev Feature-First File Structure.
 <br> Data Sources (DB) : Infura and MaticVigil Blockchain nodes
-<img src="assets/screenshots/dev_structure.png">
 
 ## CI/CD
-This repository utilizes Continuous Integration against all pushes made to the main branch. 
+This repository utilizes Continuous Integration against all pushes made to the main branch.
 <br>
-All APKs can be found as artifacts in the GitHub Actions TAB. In addition, you can download more artifacts by visiting the latest build on the codemagic webpage. 
+All APKs can be found as artifacts in the GitHub Actions TAB.
 <br>
-CI / CD tool: Github Actions / codemagic
+CI / CD tool: Github Actions
 <br>
-Builds/Releases: [APK artifacts](https://github.com/bisi-dev/defiscan/actions/workflows/flutter-ci.yml) , 
-[APK + AAR + Runner(ios) artifacts](https://codemagic.io/apps/634695f7e6fd8707a9c2015c/634695f7e6fd8707a9c2015b/latest_build)
+Builds/Releases: [APK artifacts](https://github.com/bisi-dev/defiscan/actions/workflows/flutter-ci.yml)
 
 ---
 
@@ -82,6 +58,7 @@ Check out [Flutter's official guide](https://flutter.dev/docs/get-started/instal
 ### Steps
 - Clone this repo to your local machine: `git clone https://github.com/bisi-dev/defiscan.git`
 - Run `flutter run pub get` in terminal inside project root directory.
+- Run `flutter packages pub run build_runner build --delete-conflicting-outputs` to generate storage adapters.
 - Run `main.dart` on emulator or physical device.
 - All set!
 
