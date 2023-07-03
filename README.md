@@ -2,6 +2,7 @@
 This is the official repository for DeFi Scan - a mobile blockchain explorer built with Dart/Flutter for searching, curating and storing details of cryptocurrency accounts.
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green)](https://opensource.org/licenses/Apache-2.0)
+[![Flutter CI](https://github.com/bisi-dev/defiscan/actions/workflows/flutter-ci.yml/badge.svg)](https://github.com/bisi-dev/defiscan/actions/workflows/flutter-ci.yml)
 
 ## Get it on
 <!-- [<img src="assets/screenshots/playstore_badge.png" width="250">](https://play.google.com/store/apps/details?id=dev.bisi.defiscan)   -->
