@@ -1,9 +1,23 @@
-import 'core/app_core.dart';
-import 'domain/app_domain.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
+import 'core/app_core.dart';
+import 'features/settings/bloc/settings_cubit.dart';
+import 'shared/locale/app_locale.dart';
+import 'shared/prefs/app_preferences.dart';
+import 'shared/services/storage/storage_service.dart';
+import 'shared/theme/app_theme.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  await AppPreferences.init();
+  await StorageService.initLocalDatabase();
+  runApp(
+    MultiRepositoryProvider(
+      providers: repositoryProviders,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,22 +25,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(value: ThemeNotifier()),
-        ChangeNotifierProvider.value(value: RemoteRepository()),
-      ],
-      child: Consumer<ThemeNotifier>(
-          builder: (context, ThemeNotifier themeNotifier, child) {
-        return MaterialApp(
-          theme: themeNotifier.darkTheme
-              ? AppTheme.darkTheme()
-              : AppTheme.lightTheme(),
-          debugShowCheckedModeBanner: false,
-          initialRoute: AppRoute.splash,
-          onGenerateRoute: RouteGenerator.generateRoute,
-        );
-      }),
+    return BlocProvider(
+      create: (context) => SettingsCubit(),
+      child: BlocBuilder<SettingsCubit, SettingsState>(
+        builder: (context, state) {
+          return MaterialApp(
+            theme: AppTheme.lightTheme(),
+            darkTheme: AppTheme.darkTheme(),
+            themeMode: state.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+            debugShowCheckedModeBanner: false,
+            initialRoute: AppRoute.splash,
+            onGenerateRoute: RouteGenerator.generateRoute,
+            locale: Locale(state.languageCode),
+            supportedLocales:
+                AppLocale.list.map((e) => Locale(e.code)).toList(),
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              LocalJsonLocalization.delegate,
+            ],
+          );
+        },
+      ),
     );
   }
 }
